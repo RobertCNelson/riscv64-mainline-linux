@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-old_version="v6.5.x"
-version="v6.6.x"
+old_version="v6.6.x"
+version="v6.7.x"
 
 run_new () {
 	git clone git@github.com:RobertCNelson/${git_project}.git ${project}
