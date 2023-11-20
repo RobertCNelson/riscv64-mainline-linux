@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/riscv 6.7.0-rc1 Kernel Configuration
+# Linux/riscv 6.7.0-rc2 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="riscv64-linux-gcc (GCC) 13.2.0"
 CONFIG_CC_IS_GCC=y
@@ -1365,6 +1365,7 @@ CONFIG_GENERIC_ARCH_TOPOLOGY=y
 
 # CONFIG_FIRMWARE_MEMMAP is not set
 # CONFIG_ISCSI_IBFT is not set
+# CONFIG_FW_CFG_SYSFS is not set
 # CONFIG_SYSFB_SIMPLEFB is not set
 # CONFIG_GOOGLE_FIRMWARE is not set
 
