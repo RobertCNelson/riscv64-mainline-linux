@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/riscv 6.7.0-rc5 Kernel Configuration
+# Linux/riscv 6.7.0-rc6 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="riscv64-linux-gcc (GCC) 13.2.0"
 CONFIG_CC_IS_GCC=y
@@ -6215,8 +6215,6 @@ CONFIG_DEBUG_SG=y
 # CONFIG_DEBUG_NOTIFIERS is not set
 # CONFIG_DEBUG_MAPLE_TREE is not set
 # end of Debug kernel data structures
-
-# CONFIG_DEBUG_CREDENTIALS is not set
 
 #
 # RCU Debugging
