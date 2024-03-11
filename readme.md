@@ -1,39 +1,3 @@
-# Issue Tracker:
-
-https://github.com/beagleboard/arm64-mainline-linux/issues
-
-# CI:
-
-https://git.beagleboard.org/beagleboard/arm64-mainline-linux/-/jobs
-
-# Weekly Build image for BBAI64 and PLAY (CRON job Wednesday Morning)
-
-https://rcn-ee.net/rootfs/debian-arm64-12-bookworm-minimal-mainline/
-
-# CI: Linux-stable (daily 9am):
-
-https://git.beagleboard.org/beagleboard/arm64-linux
-https://git.beagleboard.org/beagleboard/arm64-linux/-/jobs
-
-Add repo via:
-
-```
-sudo sh -c "echo 'deb [trusted=yes] https://beagleboard.beagleboard.io/arm64-linux stable main' > /etc/apt/sources.list.d/arm64-linux.list"
-```
-
-# CI: Linux-next (daily 9am):
-
-https://git.beagleboard.org/beagleboard/arm64-linux-next
-https://git.beagleboard.org/beagleboard/arm64-linux-next/-/jobs
-
-Add repo via:
-
-```
-sudo sh -c "echo 'deb [trusted=yes] https://beagleboard.beagleboard.io/arm64-linux-next stable main' > /etc/apt/sources.list.d/arm64-linux-next.list"
-```
-
-# Info
-
 This is just a set of scripts to rebuild a known working kernel for ARM devices.
 
 Script Bugs: "robertcnelson+bugs@gmail.com"
