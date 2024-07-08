@@ -42,12 +42,12 @@ DEBARCH=riscv64
 #toolchain="gcc_10_riscv64"
 #toolchain="gcc_11_riscv64"
 #toolchain="gcc_12_riscv64"
-toolchain="gcc_13_riscv64"
-#toolchain="gcc_14_riscv64"
+#toolchain="gcc_13_riscv64"
+toolchain="gcc_14_riscv64"
 
 #Kernel
 KERNEL_REL=6.10
-KERNEL_TAG=${KERNEL_REL}-rc6
+KERNEL_TAG=${KERNEL_REL}-rc7
 kernel_rt=".X-rtY"
 #Kernel Build
 BUILD=${build_prefix}1
