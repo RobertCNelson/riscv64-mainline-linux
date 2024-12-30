@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/riscv 6.13.0-rc3 Kernel Configuration
+# Linux/riscv 6.13.0-rc5 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="riscv64-linux-gcc (GCC) 14.2.0"
 CONFIG_CC_IS_GCC=y
@@ -1514,6 +1514,8 @@ CONFIG_EFI_EARLYCON=y
 # CONFIG_EFI_DISABLE_RUNTIME is not set
 # CONFIG_EFI_COCO_SECRET is not set
 # end of EFI (Extensible Firmware Interface) Support
+
+# CONFIG_IMX_SCMI_MISC_DRV is not set
 
 #
 # Qualcomm firmware drivers
