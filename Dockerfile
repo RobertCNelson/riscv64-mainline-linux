@@ -1,34 +1,21 @@
 #!/bin/echo docker build . -f
 # -*- coding: utf-8 -*-
 
-FROM debian:10
+FROM debian:trixie-slim
 
 RUN echo "# log: Setup system" \
   && set -x \
   && apt-get update \
+  && apt-get dist-upgrade -y \
   && apt-get install -y \
-    bc \
-    bison \
     build-essential \
-    cpio \
-    fakeroot \
-    flex \
-    gettext \
-    git \
-    libmpc-dev \
-    libncurses5-dev \
-    libssl-dev  \
-    lsb-release \
-    lzma \
-    lzop \
-    make \
-    man-db \
-    myrepos\
-    pkg-config \
-    u-boot-tools \
-    wget \
-    rsync \
-    kmod \
+		gcc-aarch64-linux-gnu	\
+		gcc-arm-linux-gnueabihf	\
+		gcc-riscv64-linux-gnu	\
+		libc6-dev	\
+		libc6-dev-arm64-cross	\
+		libc6-dev-armhf-cross	\
+		libc6-dev-riscv64-cross	\
   && sync
   
 ENV project riscv64-mainline-linux
