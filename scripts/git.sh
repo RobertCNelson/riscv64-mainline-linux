@@ -308,20 +308,6 @@ if [ ! "${git_config_user_name}" ] ; then
 	${git_bin} config --local user.name "Your Name"
 fi
 
-if [ "${GIT_BUNDLE}" ] ; then
-	exit 2
-	if [ -f clone.bundle ] ; then
-		if [ ! -d "${DIR}/ignore/linux-src" ] ; then
-			${git_bin} clone "${DIR}/ignore/clone.bundle" "${DIR}/ignore/linux-src"
-			cd "${DIR}/ignore/linux-src"
-			${git_bin} remote remove origin
-			${git_bin} remote add origin ${linux_repo}
-			${git_bin} pull origin master
-			cd -
-		fi
-	fi
-fi
-
 if [ ! -f "${DIR}/.yakbuild" ] ; then
 	git_kernel
 else
