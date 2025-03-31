@@ -92,7 +92,7 @@ check_and_or_clone () {
 			echo "-----------------------------"
 			echo "scripts/git: LINUX_GIT not defined in system.sh"
 			echo "Downloading linux bungle snapshot"
-			wget -c --directory-prefix="${DIR}/ignore/" https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/clone.bundle
+			wget -q --show-progress -c --directory-prefix="${DIR}/ignore/" https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/clone.bundle
 			${git_bin} clone "${DIR}/ignore/clone.bundle" "${DIR}/ignore/linux-src"
 			cd "${DIR}/ignore/linux-src"
 			${git_bin} remote remove origin
