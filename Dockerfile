@@ -20,7 +20,7 @@ RUN echo "# log: Base Image" \
 #    && sync
 
 RUN echo "# log: Download git bundle" \
-    && wget -c https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/clone.bundle
+    && wget --no-verbose --show-progress --progress=dot:mega -c https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/clone.bundle
   
 ENV project riscv64-mainline-linux
 ENV workdir /usr/local/opt/${project}/src/${project}
@@ -31,6 +31,7 @@ RUN echo "# log: Building ${project}" \
   && set -x \
   && cp system.sh.sample system.sh \
   && echo "CC=riscv64-linux-gnu-" >> system.sh \
+  && echo "GIT_BUNDLE=1" >> system.sh \
   && ls -lha ../* \
   && sh -x ./build_deb.sh \ 
   && find deploy/ \

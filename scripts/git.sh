@@ -91,16 +91,8 @@ check_and_or_clone () {
 		else
 			echo "-----------------------------"
 			echo "scripts/git: LINUX_GIT not defined in system.sh"
-			echo "Downloading linux bungle snapshot"
-			wget -q --show-progress -c --directory-prefix="${DIR}/ignore/" https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/clone.bundle
-			${git_bin} clone "${DIR}/ignore/clone.bundle" "${DIR}/ignore/linux-src"
-			cd "${DIR}/ignore/linux-src"
-			${git_bin} remote remove origin
-			${git_bin} remote add origin ${linux_repo}
-			${git_bin} pull origin master
-			cd -
-			#echo "cloning ${linux_repo} into default location: ${DIR}/ignore/linux-src"
-			#${git_bin} clone "${linux_repo}" "${DIR}/ignore/linux-src"
+			echo "cloning ${linux_repo} into default location: ${DIR}/ignore/linux-src"
+			${git_bin} clone "${linux_repo}" "${DIR}/ignore/linux-src"
 		fi
 		LINUX_GIT="${DIR}/ignore/linux-src"
 	fi
@@ -314,6 +306,20 @@ unset git_config_user_name
 git_config_user_name=$(${git_bin} config --global --get user.name || true)
 if [ ! "${git_config_user_name}" ] ; then
 	${git_bin} config --local user.name "Your Name"
+fi
+
+if [ "${GIT_BUNDLE}" ] ; then
+	exit 2
+	if [ -f clone.bundle ] ; then
+		if [ ! -d "${DIR}/ignore/linux-src" ] ; then
+			${git_bin} clone "${DIR}/ignore/clone.bundle" "${DIR}/ignore/linux-src"
+			cd "${DIR}/ignore/linux-src"
+			${git_bin} remote remove origin
+			${git_bin} remote add origin ${linux_repo}
+			${git_bin} pull origin master
+			cd -
+		fi
+	fi
 fi
 
 if [ ! -f "${DIR}/.yakbuild" ] ; then
