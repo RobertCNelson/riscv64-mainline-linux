@@ -3,19 +3,24 @@
 
 FROM debian:trixie-slim
 
+RUN mkdir -p /etc/apt/apt.conf.d/ \
+    && echo "Acquire::http::Proxy \"http://192.168.1.10:3142\";" > /etc/apt/apt.conf.d/00aptproxy
+
 RUN echo "# log: Setup system" \
   && set -x \
   && apt-get update \
   && apt-get dist-upgrade -y \
   && apt-get install -y \
     build-essential \
-		gcc-aarch64-linux-gnu	\
-		gcc-arm-linux-gnueabihf	\
-		gcc-riscv64-linux-gnu	\
-		libc6-dev	\
-		libc6-dev-arm64-cross	\
-		libc6-dev-armhf-cross	\
-		libc6-dev-riscv64-cross	\
+    gcc-aarch64-linux-gnu	\
+    gcc-arm-linux-gnueabihf	\
+    gcc-riscv64-linux-gnu	\
+    git \
+    libc6-dev	\
+    libc6-dev-arm64-cross	\
+    libc6-dev-armhf-cross	\
+    libc6-dev-riscv64-cross	\
+    lsb-release \
   && sync
   
 ENV project riscv64-mainline-linux
