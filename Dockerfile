@@ -19,19 +19,19 @@ RUN echo "# log: Base Image" \
 #    <>  \
 #    && sync
 
-RUN echo "# log: Download linux.git" \
-    && git clone https://github.com/torvalds/linux.git /opt/linux-src --depth=100
-  
 ENV project riscv64-mainline-linux
 ENV workdir /usr/local/opt/${project}/src/${project}
 ADD . ${workdir}
 WORKDIR ${workdir}
 
+RUN echo "# log: git cloning github.com/torvalds/linux.git to /usr/local/opt/linux-src" \
+    && git clone https://github.com/torvalds/linux.git /usr/local/opt/linux-src --depth=100
+
 RUN echo "# log: Building ${project}" \
   && set -x \
   && cp system.sh.sample system.sh \
   && echo "CC=riscv64-linux-gnu-" >> system.sh \
-  && echo "LINUX_GIT=/opt/linux-src/" >> system.sh \
+  && echo "LINUX_GIT=/usr/local/opt/linux-src/" >> system.sh \
   && ls -lha ../* \
   && sh -x ./build_deb.sh \ 
   && find deploy/ \
