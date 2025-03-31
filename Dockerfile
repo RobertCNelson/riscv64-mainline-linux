@@ -19,8 +19,9 @@ RUN echo "# log: Base Image" \
 #    <>  \
 #    && sync
 
-RUN echo "# log: Download git bundle" \
-    && wget --no-verbose --show-progress --progress=dot:mega -c https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/clone.bundle
+RUN echo "# log: Download linux.git" \
+    && git clone https://github.com/torvalds/linux.git linux-src \
+    && ls -lha ./*
   
 ENV project riscv64-mainline-linux
 ENV workdir /usr/local/opt/${project}/src/${project}
