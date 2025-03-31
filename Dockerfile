@@ -24,8 +24,8 @@ ENV workdir /usr/local/opt/${project}/src/${project}
 ADD . ${workdir}
 WORKDIR ${workdir}
 
-RUN echo "# log: git cloning github.com/torvalds/linux.git to /usr/local/opt/linux-src" \
-    && git clone https://github.com/torvalds/linux.git /usr/local/opt/linux-src --depth=100
+RUN echo "# log: git cloning https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux.git to /usr/local/opt/linux-src" \
+    && git clone https://kernel.googlesource.com/pub/scm/linux/kernel/git/torvalds/linux.git /usr/local/opt/linux-src --depth=100
 
 RUN echo "# log: Building ${project}" \
   && set -x \
