@@ -26,6 +26,8 @@ WORKDIR ${workdir}
 
 RUN echo "# log: Building ${project}" \
   && set -x \
+  && cp system.sh.sample system.sh \
+  && echo "CC=riscv64-linux-gnu-" >> system.sh \
   && sh -x ./build_deb.sh \ 
   && find deploy/ \
   && sync

@@ -91,8 +91,16 @@ check_and_or_clone () {
 		else
 			echo "-----------------------------"
 			echo "scripts/git: LINUX_GIT not defined in system.sh"
-			echo "cloning ${linux_repo} into default location: ${DIR}/ignore/linux-src"
-			${git_bin} clone "${linux_repo}" "${DIR}/ignore/linux-src"
+			echo "Downloading linux bungle snapshot"
+			wget -c --directory-prefix="${DIR}/ignore/" https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/clone.bundle
+			${git_bin} clone "${DIR}/ignore/clone.bundle" "${DIR}/ignore/linux-src"
+			cd "${DIR}/ignore/linux-src"
+			${git_bin} remote remove origin
+			${git_bin} remote add origin ${linux_repo}
+			${git_bin} pull origin master
+			cd -
+			#echo "cloning ${linux_repo} into default location: ${DIR}/ignore/linux-src"
+			#${git_bin} clone "${linux_repo}" "${DIR}/ignore/linux-src"
 		fi
 		LINUX_GIT="${DIR}/ignore/linux-src"
 	fi
