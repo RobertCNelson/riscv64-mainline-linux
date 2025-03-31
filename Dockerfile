@@ -1,7 +1,8 @@
 #!/bin/echo docker build . -f
 # -*- coding: utf-8 -*-
 
-FROM debian:trixie-slim
+FROM robertcnelson/beagle-devscripts-kernel-debian-13-amd64:latest
+#https://openbeagle.org/beagleboard/ci-docker-images
 
 RUN echo "# log: Setup Proxy" \
     && mkdir -p /etc/apt/apt.conf.d/ \
@@ -12,33 +13,11 @@ RUN echo "# log: Base Image" \
   && apt-get update \
   && apt-get dist-upgrade -y
 
-RUN echo "# log: Setup system" \
-  && set -x \
-  && apt-get install -y \
-    bc  \
-    bison \
-    build-essential \
-    cpio  \
-    flex  \
-    gcc-aarch64-linux-gnu	\
-    gcc-arm-linux-gnueabihf	\
-    gcc-riscv64-linux-gnu	\
-    gettext \
-    git \
-    libc6-dev	\
-    libc6-dev-arm64-cross	\
-    libc6-dev-armhf-cross	\
-    libc6-dev-riscv64-cross	\
-    libmpc-dev  \
-    libncurses-dev  \
-    libssl-dev  \
-    lsb-release \
-    lz4 \
-    man-db  \
-    pkg-config  \
-    u-boot-tools  \
-    zstd  \
-    && sync
+#RUN echo "# log: Install Missing Packages" \
+#  && set -x \
+#  && apt-get install -y \
+#    <>  \
+#    && sync
   
 ENV project riscv64-mainline-linux
 ENV workdir /usr/local/opt/${project}/src/${project}
