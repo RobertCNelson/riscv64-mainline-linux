@@ -20,7 +20,7 @@ RUN echo "# log: Base Image" \
 #    && sync
 
 RUN echo "# log: Download linux.git" \
-    && git clone https://github.com/torvalds/linux.git /opt/linux-src --depth=100 \
+    && git clone https://github.com/torvalds/linux.git /opt/linux-src --depth=100
   
 ENV project riscv64-mainline-linux
 ENV workdir /usr/local/opt/${project}/src/${project}
