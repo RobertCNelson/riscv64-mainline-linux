@@ -20,6 +20,8 @@ RUN echo "# log: Base Image" \
 #    && sync
 
 RUN echo "# log: Download linux.git" \
+    && pwd \
+    && ls -lha ./* \
     && git clone https://github.com/torvalds/linux.git linux-src \
     && ls -lha ./*
   
