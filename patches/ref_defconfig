@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/riscv 6.16.0-rc2 Kernel Configuration
+# Linux/riscv 6.16.0-rc3 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="riscv64-linux-gcc (GCC) 15.1.0"
 CONFIG_CC_IS_GCC=y
@@ -6354,7 +6354,6 @@ CONFIG_CRYPTO_ACOMP2=y
 CONFIG_CRYPTO_MANAGER=y
 CONFIG_CRYPTO_MANAGER2=y
 # CONFIG_CRYPTO_USER is not set
-# CONFIG_CRYPTO_SELFTESTS is not set
 # CONFIG_CRYPTO_NULL is not set
 # CONFIG_CRYPTO_PCRYPT is not set
 # CONFIG_CRYPTO_CRYPTD is not set
