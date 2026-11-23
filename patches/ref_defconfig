@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/riscv 7.4.0-rc3 Kernel Configuration
+# Linux/riscv 7.4.0-rc4 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="riscv64-linux-gcc (GCC) 16.2.0"
 CONFIG_CC_IS_GCC=y
@@ -880,7 +880,7 @@ CONFIG_SLAB_MERGE_DEFAULT=y
 # end of Slab allocator options
 
 # CONFIG_SHUFFLE_PAGE_ALLOCATOR is not set
-CONFIG_COMPAT_BRK=y
+# CONFIG_COMPAT_BRK is not set
 CONFIG_SELECT_MEMORY_MODEL=y
 # CONFIG_FLATMEM_MANUAL is not set
 CONFIG_SPARSEMEM_MANUAL=y
@@ -5075,7 +5075,8 @@ CONFIG_USB_MUSB_SUNXI=m
 # CONFIG_USB_HSIC_USB4604 is not set
 # CONFIG_USB_LINK_LAYER_TEST is not set
 # CONFIG_USB_CHAOSKEY is not set
-# CONFIG_USB_ONBOARD_DEV is not set
+CONFIG_USB_ONBOARD_DEV=m
+# CONFIG_USB_ONBOARD_DEV_USB5744 is not set
 
 #
 # USB Physical Layer drivers
